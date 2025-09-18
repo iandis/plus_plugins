@@ -113,6 +113,8 @@ internal class Share(
             }
         }
 
+        shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
         // Create the chooser intent
         val chooserIntent =
             if (withResult && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
