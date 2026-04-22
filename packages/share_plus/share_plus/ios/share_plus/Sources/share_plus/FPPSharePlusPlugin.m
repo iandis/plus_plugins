@@ -461,10 +461,14 @@ activityTypesForStrings(NSArray<NSString *> *activityTypeStrings) {
   BOOL isCoordinateSpaceOfSourceView =
       CGRectContainsRect(controller.view.frame, origin);
 
-  // If device is e.g. an iPad then hasPopoverPresentationController is true
+  // Check if this is actually an iPad
+  BOOL isIpad = ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad);
+
+  // Before Xcode 26 this is true for iPad and false for iPhone.
+  // Since Xcode 26 it is true for both, so only enforce origin on iPad.
   BOOL hasPopoverPresentationController =
       [activityViewController popoverPresentationController] != NULL;
-  if (hasPopoverPresentationController &&
+  if (isIpad && hasPopoverPresentationController &&
       (!isCoordinateSpaceOfSourceView || CGRectIsEmpty(origin))) {
     NSString *sharePositionIssue = [NSString
         stringWithFormat:
