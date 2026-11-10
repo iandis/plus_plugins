@@ -1,3 +1,8 @@
+## 13.3.2
+
+ - **FIX**(share_plus): [Android] Always open the share sheet in a new activity, so it shows from an app whose activity is `singleInstance`.
+ - **BREAKING**(share_plus): Drop Windows support. The package no longer needs `win32` 6, so apps that don't build for Windows keep packages that need `win32` 5 (such as `device_info_plus` 12, `package_info_plus` 9 and `file_picker` 10).
+
 ## 13.3.1
 
  - **FIX**(share_plus): Only configure popover presentation on iPad ([#3965](https://github.com/fluttercommunity/plus_plugins/issues/3965)). ([86ba69a5](https://github.com/fluttercommunity/plus_plugins/commit/86ba69a526a0d26173cb5df43ed446177cb08bd5))

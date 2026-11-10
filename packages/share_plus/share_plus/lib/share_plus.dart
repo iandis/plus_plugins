@@ -16,8 +16,6 @@ export 'package:share_plus_platform_interface/share_plus_platform_interface.dart
         CupertinoActivityType;
 
 export 'src/share_plus_linux.dart';
-export 'src/share_plus_windows.dart'
-    if (dart.library.js_interop) 'src/share_plus_web.dart';
 
 class SharePlus {
   /// Use [SharePlus.instance] to access the [share] method.
